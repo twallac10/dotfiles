@@ -14,6 +14,6 @@ export DOTFILES_LOCATION;
 ./bin/dotfiles install omz
 ./bin/dotfiles install starship
 ./bin/dotfiles install zsh
-./bin/dotfiles install brew
+#./bin/dotfiles install brew
 ./bin/dotfiles install vscode
 ./bin/dotfiles install git
