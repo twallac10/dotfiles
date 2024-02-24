@@ -34,4 +34,6 @@ redhat.vscode-yaml
 weaveworks.vscode-gitops-tools
 yzhang.markdown-all-in-one
 )
+  printf "\n🚀 Installing the vscode extensions\n"
+
 for ext in "${CODE_EXTENSIONS[@]}"; do printf "installing %s\n" "${ext}" && code --install-extension "${ext}" --force; done

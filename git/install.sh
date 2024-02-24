@@ -2,6 +2,8 @@
 
 set -e
 
+printf "\n🚀 Installing git configurations\n"
+
 if [ ! -f "${HOME}/.gitconfig.local" ] ; then
   cp "${DOTFILES_LOCATION}/git/.gitconfig.local" "${HOME}/.gitconfig.local"
 
