@@ -1,6 +1,12 @@
 #!/usr/bin/env zsh
 
 set -e
+# If uname is not darwin, exit
+
+if [ "$(uname)" != "Darwin" ]; then
+  printf "This script is only for macOS\n"
+  exit 1
+fi
 
 ln -sf "${DOTFILES_LOCATION}/vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json"
 
@@ -34,6 +40,7 @@ redhat.vscode-yaml
 weaveworks.vscode-gitops-tools
 yzhang.markdown-all-in-one
 )
-  printf "\n🚀 Installing the vscode extensions\n"
+
+printf "\n🚀 Installing the vscode extensions\n"
 
 for ext in "${CODE_EXTENSIONS[@]}"; do printf "installing %s\n" "${ext}" && code --install-extension "${ext}" --force; done
