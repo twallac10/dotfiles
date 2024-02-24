@@ -5,7 +5,7 @@ set -e
 
 if [ "$(uname)" != "Darwin" ]; then
   printf "This script is only for macOS\n"
-  exit 1
+  exit 0
 fi
 
 ln -sf "${DOTFILES_LOCATION}/vscode/settings.json" "${HOME}/Library/Application Support/Code/User/settings.json"
