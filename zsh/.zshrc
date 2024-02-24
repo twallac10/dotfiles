@@ -19,7 +19,7 @@ export ZSH=$HOME/.oh-my-zsh
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   ZSH_THEME="powerlevel10k/powerlevel10k"
 else
-  ZSH_THEME="ys"
+  ZSH_THEME="pmcgee"
 fi
 
 # Set list of themes to pick from when loading at random
