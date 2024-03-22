@@ -14,15 +14,15 @@ echo "Starting installation..."
 ###
 if [ "$(uname)" = "Darwin" ]; then
     echo "Installing dependencies for macOS"
-    ./bin/dotfiles install brew
-    ./bin/dotfiles install omz
-    ./bin/dotfiles install zsh
+    ${DOTFILES_LOCATION}/bin/dotfiles install brew
+    ${DOTFILES_LOCATION}/bin/dotfiles install omz
+    ${DOTFILES_LOCATION}/bin/dotfiles install zsh
 fi
 
 echo "Installing dependencies for Linux"
 
-./bin/dotfiles install starship
+${DOTFILES_LOCATION}/bin/dotfiles install starship
 echo "Installing vscode extensions"
 #./bin/dotfiles install brew
-./bin/dotfiles install vscode
-./bin/dotfiles install git
+${DOTFILES_LOCATION}/bin/dotfiles install vscode
+${DOTFILES_LOCATION}/bin/dotfiles install git
