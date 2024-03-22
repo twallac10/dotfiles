@@ -14,5 +14,5 @@ if [ ! -f "${HOME}/.gitconfig.local" ] ; then
   sed -i '' "s/GITEMAIL/${var}/" "${HOME}/.gitconfig.local"
 fi
 
-ln -sf "${DOTFILES_LOCATION}/git/.gitconfig" "${HOME}/.gitconfig"
-ln -sf "${DOTFILES_LOCATION}/git/.gitignore" "${HOME}/.gitignore"
+# ln -sf "${DOTFILES_LOCATION}/git/.gitconfig" "${HOME}/.gitconfig"
+# ln -sf "${DOTFILES_LOCATION}/git/.gitignore" "${HOME}/.gitignore"
