@@ -12,3 +12,7 @@ else
   echo "Configuring bashrc for starship"
   echo 'eval "$(starship init bash)"' >> ~/.bashrc
 fi
+
+echo "Copying starship.toml to .config directory"
+mkdir -p ~/.config
+cp $DOTFILES_LOCATION/starship/config/starship.toml ~/.config/starship.toml
