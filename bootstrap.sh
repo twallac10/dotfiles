@@ -22,6 +22,7 @@ fi
 echo "Installing dependencies for Linux"
 
 ./bin/dotfiles install starship
+echo "Installing vscode extensions"
 #./bin/dotfiles install brew
 ./bin/dotfiles install vscode
 ./bin/dotfiles install git
