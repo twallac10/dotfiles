@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 set -e
 # If uname is not darwin, exit
 

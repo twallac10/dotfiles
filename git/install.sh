@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 set -e
 
 printf "\n🚀 Installing git configurations\n"

@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 set -e
 
 if [ -d "${HOME}/.oh-my-zsh" ]; then
