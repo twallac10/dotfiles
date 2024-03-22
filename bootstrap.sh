@@ -12,7 +12,7 @@ echo "Starting installation..."
 ###
 # Install dependencies
 ###
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
     echo "Installing dependencies for macOS"
     ./bin/dotfiles install brew
     ./bin/dotfiles install omz
