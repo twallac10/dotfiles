@@ -6,6 +6,9 @@ set -e
 DOTFILES_LOCATION=$(pwd)
 export DOTFILES_LOCATION;
 
+echo "DOTFILES_LOCATION: ${DOTFILES_LOCATION}"
+echo "Starting installation..."
+
 ###
 # Install dependencies
 ###
