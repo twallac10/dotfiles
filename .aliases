@@ -112,7 +112,7 @@ alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 # set python command if 'py' not installed
-builtin which py > /dev/null || alias py='python3'
+which py > /dev/null || alias py='python3'
 
 # Open VSCode using a new window
 alias vscn='code --new-window'
