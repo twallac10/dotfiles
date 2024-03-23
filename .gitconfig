@@ -21,6 +21,12 @@
 	# Commit all changes.
 	ca = !git add -A && git commit -av
 
+	# Stage all changes.
+	aa = add --all
+
+	# Push changes to the current remote repository and set the remote as upstream.
+	pu = !"git push -u origin $(git symbolic-ref --short HEAD)"
+
 	# Switch to a branch, creating it if necessary.
 	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
