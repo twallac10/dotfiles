@@ -91,6 +91,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # URL-encode strings
 alias urlencode='python3 -c "import sys, urllib.parse as ul; print(ul.quote_plus(sys.argv[1]));"'
+alias urldecode='python3 -c "import sys, urllib.parse as ul; print(ul.unquote_plus(sys.argv[1]));"'
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
@@ -112,7 +113,21 @@ alias reload="exec ${SHELL} -l"
 alias path='echo -e ${PATH//:/\\n}'
 
 # set python command if 'py' not installed
-which py > /dev/null || alias py='python3'
+builtin which py > /dev/null || alias py='python3'
 
 # Open VSCode using a new window
 alias vscn='code --new-window'
+
+## Kubernetes
+
+alias kgp="kubectl get pods"
+alias kgpa="kubectl get pods --all-namespaces"
+alias kgpy="kubectl get pods -o yaml"
+alias kgpj="kubectl get pods -o json"
+
+## K3D
+
+alias k3dd="k3d cluster delete"
+alias k3dl="k3d cluster list"
+alias k3dc="k3d cluster create"
+alias k3dcc="k3d cluster create --config ~/projects/k3d/config.yaml"
