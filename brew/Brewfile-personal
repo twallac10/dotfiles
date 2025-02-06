@@ -1,0 +1,4 @@
+cask "discord"
+cask "mimestream"
+cask "multipass"
+cask "slack"
