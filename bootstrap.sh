@@ -27,7 +27,6 @@ if [ "$(uname -o)" = "Darwin" ]; then
     echo "Installing dependencies for macOS"
     ${DOTFILES_LOCATION}/bin/dotfiles install brew
     ${DOTFILES_LOCATION}/bin/dotfiles install omz
-    ${DOTFILES_LOCATION}/bin/dotfiles install zsh
 fi
 
 echo "Installing dependencies for Linux"

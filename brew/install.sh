@@ -12,8 +12,8 @@ if command -v brew &> /dev/null; then
   printf "\n🚀 Installing the brew packages\n"
   brew bundle --file=$DOTFILES_LOCATION/brew/Brewfile
   
-  if command -v jamf &> /dev/null; then
-    printf "\n🚀 Installing the brew packages for Jamf\n"
+  if ! command -v jamf &> /dev/null; then
+    printf "\n🚀 Installing the additional brew packages\n"
     brew bundle --file=$DOTFILES_LOCATION/brew/Brewfile-personal
   fi
 fi
