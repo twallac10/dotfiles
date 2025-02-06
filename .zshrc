@@ -153,3 +153,9 @@ eval "$(gh copilot alias -- zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+eval "$(starship init zsh)"
+
+## Function to create a github PR with the parameter passed as a title
+function ghpr() {
+  gh pr create --title "$1" --base main --head $(git branch --show-current) --fill-verbose
+}
