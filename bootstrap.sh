@@ -23,7 +23,7 @@ echo "Starting installation..."
 ###
 # Install dependencies
 ###
-if [ "$(uname)" = "Darwin" ]; then
+if [ "$(uname -o)" = "Darwin" ]; then
     echo "Installing dependencies for macOS"
     ${DOTFILES_LOCATION}/bin/dotfiles install brew
     ${DOTFILES_LOCATION}/bin/dotfiles install omz
@@ -33,8 +33,6 @@ fi
 echo "Installing dependencies for Linux"
 
 ${DOTFILES_LOCATION}/bin/dotfiles install starship
-echo "Installing vscode extensions"
-#./bin/dotfiles install brew
 ${DOTFILES_LOCATION}/bin/dotfiles install vscode
 ${DOTFILES_LOCATION}/bin/dotfiles install git
 

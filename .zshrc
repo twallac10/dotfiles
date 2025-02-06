@@ -15,7 +15,8 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -49,7 +50,7 @@ DISABLE_MAGIC_FUNCTIONS="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -81,17 +82,14 @@ plugins=(
 brew
 fzf
 vscode
-zsh-autosuggestions
-zsh-syntax-highlighting
+git 
+kubectl 
 )
 
 #fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# Flux autocomplete
-command -v flux >/dev/null && . <(flux completion zsh)
 
 autoload -U compinit && compinit
 
@@ -126,9 +124,7 @@ source <(kubebuilder completion zsh)
 
 # alias fls='ls | fzf'
 
-# Load common settings
-[ -f ~/.commonrc ] && source ~/.commonrc
-
+source ~/.aliases
 #if command -v pyenv 1>/dev/null 2>&1; then
 #  export PYENV_ROOT="$HOME/.pyenv"
 #  export PATH="$PYENV_ROOT/bin:$PATH"
@@ -136,7 +132,9 @@ source <(kubebuilder completion zsh)
 #  eval "$(pyenv init -)"
 #fi
 
-eval "$(starship init zsh)"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 #autoload bashcompinit && bashcompinit
 #source /usr/local/etc/bash_completion.d/az
@@ -145,9 +143,13 @@ export GPG_TTY=$(tty)
 export PATH="/usr/local/sbin:$PATH"
 export PATH="${PATH}:${HOME}/.krew/bin"
 
+export GOBIN="$HOME/go/bin"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if command -v ngrok &>/dev/null; then
-    eval "$(ngrok completion)"
-  fi
+eval "$(gh copilot alias -- zsh)"
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+

@@ -1,7 +1,7 @@
 set -e
 
 # If brew is not installed and the arch is not arm64, install brew
-if ! command -v brew &> /dev/null && [ "$(uname -m)" != "arm64" ]; then
+if ! command -v brew &> /dev/null; then
   printf "\n🚀 Installing the brew package manager\n"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
@@ -10,8 +10,10 @@ fi
 
 if command -v brew &> /dev/null; then
   printf "\n🚀 Installing the brew packages\n"
-  BREW_PACKAGES=($(cat "${DOTFILES_LOCATION}/brew/packages.txt"))
-  for pkg in "${BREW_PACKAGES[@]}"; do
-    printf "installing %s\n" "${pkg}" && brew install "${pkg}"
-  done
+  brew bundle --file=$DOTFILES_LOCATION/brew/Brewfile
+  
+  if command -v jamf &> /dev/null; then
+    printf "\n🚀 Installing the brew packages for Jamf\n"
+    brew bundle --file=$DOTFILES_LOCATION/brew/Brewfile-personal
+  fi
 fi
