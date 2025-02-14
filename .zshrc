@@ -142,7 +142,7 @@ export GPG_TTY=$(tty)
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH="${PATH}:${HOME}/.krew/bin"
-
+export PATH="${PATH}:${GOBIN}"
 export GOBIN="$HOME/go/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
