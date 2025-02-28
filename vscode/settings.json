@@ -23,5 +23,6 @@
     },
     "dotfiles.repository": "https://github.com/twallac10/dotfiles.git",
     "dotfiles.installCommand": "bootstrap.sh",
-    "remote.autoForwardPortsSource": "hybrid"
+    "remote.autoForwardPortsSource": "hybrid",
+    "workbench.externalBrowser": "arc"
 }
