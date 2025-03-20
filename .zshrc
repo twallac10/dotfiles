@@ -140,10 +140,11 @@ eval "$(pyenv virtualenv-init -)"
 #source /usr/local/etc/bash_completion.d/az
 export GPG_TTY=$(tty)
 
+export GOBIN="$HOME/go/bin"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="${PATH}:${HOME}/.krew/bin"
 export PATH="${PATH}:${GOBIN}"
-export GOBIN="$HOME/go/bin"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
