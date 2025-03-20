@@ -207,4 +207,8 @@
 
 	insteadOf = "gist:"
 [credential]
-	helper = manager
+	helper = /usr/local/bin/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "https://github.com"]
+	username = twallac10
